@@ -31,6 +31,12 @@ import ClickCounter from './components/ClickCounter';
 import HoverCounter from './components/HoverCounter';
 import ClickCounterHOC from './components/ClickCounterHOC'
 import HoverCounterHOC from './components/HoverCounterHOC';
+import ClickCounterTwo from './components/ClickCounterTwo';
+import HoverCounterTwo from './components/HoverCounterTwo';
+import User from './components/User';
+import CounterRenderPops from './components/CounterRenderPops';
+import ComponentA from './components/ComponentA';
+import { UserProvider } from './components/userContext';
 
 function App() {
   return (
@@ -141,11 +147,24 @@ function App() {
       {/* <ClickCounter></ClickCounter>
       <HoverCounter></HoverCounter> */}
 
-      {/* 34 HOC - Part 2 */}
+      {/* 34 & 35 HOC - Part 2 & 3 */}
       {/* A function that takes component as an argument and returns a new component */}
       {/* const newComponent = HOC(originalComponent) */}
-      <ClickCounterHOC name='Chetan'></ClickCounterHOC>
-      <HoverCounterHOC name='Chetan'></HoverCounterHOC>
+      {/* <ClickCounterHOC name='Chetan'></ClickCounterHOC>
+      <HoverCounterHOC name='Chetan'></HoverCounterHOC> */}
+
+      {/* 36 & 37 Render Props - Part 1 & 2 */}
+      {/* Sharing code between components using prop whose value is a function */}
+      {/* <User name={(isLoggedIn) => isLoggedIn ? 'Chetan' : 'Guest'}></User>
+      <CounterRenderPops render={(count, incrementCount) => <ClickCounterTwo count={count} incrementCount={incrementCount}></ClickCounterTwo>}></CounterRenderPops>
+      <CounterRenderPops render={(count, incrementCount) => <HoverCounterTwo count={count} incrementCount={incrementCount}></HoverCounterTwo>}></CounterRenderPops> */}
+
+      {/* 38, 39 & 40 - Context API Part 1 & 2 */}
+      {/* Avoid passing props to every level of component tree */}
+      {/* Context Type is only available with Class components and we can consume only one conect per class components */}
+      <UserProvider value='Chetan'>
+        <ComponentA></ComponentA>
+      </UserProvider>
 
     </div>
   );
