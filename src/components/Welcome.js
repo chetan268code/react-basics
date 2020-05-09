@@ -5,6 +5,7 @@ class Welcome extends Component {
         return (
             <div>
                 <div>Hi {this.props.name}</div>
+                <div>{this.props.children}</div>
             </div>
         )
     }

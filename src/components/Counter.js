@@ -10,10 +10,14 @@ class Counter extends Component {
     }
 
     increment() {
-        // Do not directly mutate this.state, does not rerender
+        // Do not directly mutate this.state, does not re-render
         // this.state.count = this.state.count + 1;
         // console.log(this.state.count);
 
+        // React binds multiple setState calls in to a single render for better performance
+        // therefore always use prevState to consume previous state
+        // Calls to setState are async
+        // Therefore we may need a callback if we need to main the order of execution
         this.setState((prevState, props) => ({
             count: prevState.count + 1
         }), () => {
@@ -33,3 +37,4 @@ class Counter extends Component {
 }
 
 export default Counter
+

@@ -19,7 +19,7 @@ class UserGreeting extends Component {
         //     <div>{message}</div>
         // )
 
-        // B
+        // B (Ternary COnditional operator)
         // return (
         //     this.state.isLoggedIn ? <div>hi User</div> : <div>Hi Guset</div>
         // )

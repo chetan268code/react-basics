@@ -28,16 +28,16 @@ class Message extends Component {
             <div>
                 {this.state.message}
 
-                {/* A */}
+                {/* A - Handler as function declaration */}
                 <button onClick={this.clickHandlerES6}>Subscribe A</button>
 
-                {/* B */}
+                {/* B - Handler as function Call */}
                 <button onClick={() => this.clickHandlerES6()}>Subscribe B</button>
 
-                {/* C */}
+                {/* C - Handler as function declaration */}
                 <button onClick={this.clickHandlerES5.bind(this)}>Subscribe C</button>
 
-                {/* D */}
+                {/* D - Handler as function call */}
                 <button onClick={() => this.clickHandlerES5()}>Subscribe D</button>
             </div>
         )

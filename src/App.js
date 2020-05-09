@@ -25,6 +25,8 @@ import RefsDemo from './components/RefsDemo';
 import FocusInput from './components/FocusInput';
 import FRParentInput from './components/FRParentInput';
 import PortalDemo from './components/PortalDemo';
+import Hero from './components/Hero';
+import ErrorBoundary from './components/ErrorBoundary';
 
 function App() {
   return (
@@ -35,18 +37,23 @@ function App() {
       {/* 6 Class Components */}
       {/* <Welcome></Welcome> */}
 
+      {/* 7 Hooks */}
+
       {/* 8 JSX */}
       {/* <Hello></Hello> */}
 
-      {/* 9 Props */}
-      {/* <Greet name='Chetan'>This is children</Greet>
-      <Welcome name='Chetan'></Welcome> */}
+      {/* 9 Props: Note: Props are immutable (value cannot be changed - Just like Vue) */}
+      {/* <Greet name='Chetan'>This is children, just like slots</Greet>
+      <Welcome name='Chetan'>This is children, just like slots</Welcome> */}
 
-      {/* 10 State */}
+      {/* 10 State: Just like data of components in Vue */}
       {/* <Message></Message> */}
 
       {/* 11 setState */}
       {/* <Counter></Counter> */}
+
+      {/* 12 Destructuring States and props */}
+      {/* Normal JS concept */}
 
       {/* 13 Event Handling */}
       {/* <FunctionClick></FunctionClick>
@@ -75,27 +82,30 @@ function App() {
       {/* <Form></Form> */}
 
       {/* 23 Component Mounting Lifecycle Methods */}
-      {/* constructor, getDerivedStateFromProps, render, componentDidMount */}
-      {/* Constructor - When instance is created */}
-      {/* getDerivedStateFromProps - when state depends on changes in props over time. Does not have access to this keyword */}
-      {/* render - returns the JSX. After this child component lifecycle methods are executed */}
-      {/* componentDidMount - Called only once. Called once all child components are mounted onto the DOM */}
+      {/* constructor, static getDerivedStateFromProps, render, componentDidMount */}
+      {/* Constructor - When instance is created. Bind event hendlers. Do not make network requests here */}
+      {/* static getDerivedStateFromProps(props, state) - when state depends on changes in props over time. 
+      Does not have access to this keyword, return object instead. Do not make network requests */}
+      {/* render - returns the JSX. After this child component lifecycle methods are executed.
+      Do not make network requests. Do not interact with DOM */}
+      {/* componentDidMount - Called only once. Called once all child components are mounted onto the DOM
+      Can make network requests. Can interact with DOM */}
       {/* <LifecycleA /> */}
 
-      {/* 24 Component Mounting Lifecycle Methods */}
-      {/* getDerivedStateFromProps, shouldComponentUpdate, render, getSnapshotBeforeUpdate, componentDidUpdate */}
-      {/* getDerivedStateFromProps(nextProps, nextState) */}
-      {/* shouldComponentUpdate - return true or false for compont should update or not. Return true by default */}
+      {/* 24 Component Updating Lifecycle Methods */}
+      {/* static getDerivedStateFromProps, shouldComponentUpdate, render, getSnapshotBeforeUpdate, componentDidUpdate */}
+      {/* static getDerivedStateFromProps(props, state) */}
+      {/* shouldComponentUpdate(nextProps, nextState) - return true or false for compont should update or not. Return true by default */}
       {/* render */}
       {/* getSnapshotBeforeUpdate(prevProps, prevState) - accepts prev porops and state and called just before changes from 
       virtual DOM are mounted to DOM. Return null or value and this value is passed as a third parameneter to componetDidMount */}
-      {/* componentDidUpdate(prevProps, prevState, snapshot) - After render is finishaed. Even the children */}
+      {/* componentDidUpdate(prevProps, prevState, snapshot) - After render is finishaed. Even the children. Can make network requests. Can interact with DOM */}
       {/* <LifecycleA /> */}
 
-      {/* 25 Fragments */}
+      {/* 25 Fragments - Like template in Vue */}
       {/* <FragmentDemo></FragmentDemo> */}
 
-      {/* 26 Pure Components */}
+      {/* 26 Pure Components - implements shouldComponentUpdate with shallow prop and state comparison - For class based components */}
       {/* <ParentComp></ParentComp> */}
 
       {/* 27 Memo */}
@@ -115,7 +125,13 @@ function App() {
       {/* <PortalDemo /> */}
 
       {/* 32 Error Boundary */}
-      
+      {/* static getDerivedStateFromError, componentDidCatch */}
+      {/* getDerivedStateFromError - Used to present a fallback UI */}
+      {/* componentDidCatch - Used to log error information */}
+      {/* Note: Only catch errors during rendering, lifecycle methods and constructor */}
+      <ErrorBoundary>
+        <Hero heroName='Joker'></Hero>
+      </ErrorBoundary>
 
     </div>
   );

@@ -1,7 +1,7 @@
 import React from 'react'
 
 // JSX version
-// const Hello = () => <div id="hello"><h1>Hello</h1></div>
+// const Hello = () => <div id="hello" class="dummyClass"><h1>Hello</h1></div>
 
 // Non JSX Version
 const Hello = () => {
