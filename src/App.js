@@ -27,6 +27,10 @@ import FRParentInput from './components/FRParentInput';
 import PortalDemo from './components/PortalDemo';
 import Hero from './components/Hero';
 import ErrorBoundary from './components/ErrorBoundary';
+import ClickCounter from './components/ClickCounter';
+import HoverCounter from './components/HoverCounter';
+import ClickCounterHOC from './components/ClickCounterHOC'
+import HoverCounterHOC from './components/HoverCounterHOC';
 
 function App() {
   return (
@@ -129,9 +133,19 @@ function App() {
       {/* getDerivedStateFromError - Used to present a fallback UI */}
       {/* componentDidCatch - Used to log error information */}
       {/* Note: Only catch errors during rendering, lifecycle methods and constructor */}
-      <ErrorBoundary>
+      {/* <ErrorBoundary>
         <Hero heroName='Joker'></Hero>
-      </ErrorBoundary>
+      </ErrorBoundary> */}
+
+      {/* 33 HOC - Part 1 */}
+      {/* <ClickCounter></ClickCounter>
+      <HoverCounter></HoverCounter> */}
+
+      {/* 34 HOC - Part 2 */}
+      {/* A function that takes component as an argument and returns a new component */}
+      {/* const newComponent = HOC(originalComponent) */}
+      <ClickCounterHOC name='Chetan'></ClickCounterHOC>
+      <HoverCounterHOC name='Chetan'></HoverCounterHOC>
 
     </div>
   );
